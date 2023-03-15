@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    <title>{% if result: %} Hai Vinto! {% else: %} Hai Perso! {%endif%}</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Numbers!</h1>
+        {% if result: %}
+            <h3><b>Hai Vinto!</b></h3>
+            <p>Hai giocato per <b>{{games_counter}}</b> {% if games_counter > 1: %} volte! {%else:%} volta! {%endif%}</p>
+            <br>
+            <a class="retry" href="/">Riprova!</a>
+        {% else: %}
+            <h3><b>Hai Perso!</b></h3>
+            <p>Hai giocato per <b>{{games_counter}}</b> {% if games_counter > 1: %} volte! {%else:%} volta! {%endif%}</p>
+            <br>
+            <a class="retry" href="/">Riprova!</a>
+        {%endif%}
+    </div>
+</body>
+</html>
